@@ -1,1 +1,59 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+    background-color: #000000;
+    color: #FF55FF;
+
+}
+div.header {
+    background-color: #AAAAAA;
+    color: #000000;
+    margin: auto;
+    max-width: 26%;
+    text-align: center;
+}
+div.box {
+    background-color: #0000AA;
+    width: 100%;
+    margin:auto;
+}
+div.borders {
+    margin: auto;
+    width: 25.7%;
+    border-style: solid;
+    border-color: #55FFFF;
+    /* border-inline-color: #0000AA; */
+    background-color: #0000AA;
+    box-shadow: 8px 16px #555555;
+}
+input {
+    background-color: #FFFFFF;
+    color: #AA5500;
+    padding-left: 2%;
+}
+
+div > p {
+    background-color: #0000AA;
+    color: #FFFFFF;
+}
+p {
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+button {
+    margin: auto;
+    /* width: 10%; */
+    /* text-align: center; */
+    position: relative;
+    display: block;
+    background-color: #AAAAAA;
+    color: #AA0000;
+    border: none;
+    border-style:none;
+}
+button:focus {
+    background-color: #555555;
+    border: none;
+    border-style: none;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: fixedsys, fixedsys, monospace; }

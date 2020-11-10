@@ -20,6 +20,7 @@ import { UpdateComponent } from './view/update/update.component';
 import { RegisterUsernameComponent } from './register/register-username/register-username.component';
 import { RegisterPasswordComponent } from './register/register-password/register-password.component';
 import { RegisterSubmitComponent } from './register/register-submit/register-submit.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { RegisterSubmitComponent } from './register/register-submit/register-sub
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
