@@ -67,6 +67,11 @@ button:focus {
     border: none;
     border-style: none;
 }
+.error {
+    background-color: #AA0000;
+    color: #FFFF55;
+}
+
 .field {
     background-color: #0000AA;
     color: #55FFFF;

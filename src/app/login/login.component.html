@@ -3,7 +3,8 @@
     <div class="box">
     <div>    <p>Username: <input type="text" name="regUserText" value="UsErNaMe"></p></div>
     <div>    <p>Password: <input type="text" name="regUserText" value="pAsSwOrD"></p></div>
-    <button type="submit">OK</button>
+    <div><p class="error">{{invalidError}}</p></div>
+    <button type="submit" (mouseover)='submitForm()'>OK</button>
 </div>
 </div>
 
