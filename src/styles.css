@@ -166,10 +166,12 @@ button:focus {
     float: right;
 }
 html, body { 
+    
     height: 100%; 
     margin: 0; font-family: monospace; 
 }
 body { 
+    margin-top: 128px;
     background-image: url("https://catcssp2imgbucket.s3.us-east-2.amazonaws.com/background.bmp");
     background-repeat: repeat;
 }

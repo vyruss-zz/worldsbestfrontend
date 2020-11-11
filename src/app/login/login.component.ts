@@ -1,6 +1,6 @@
-import { NodeWithI18n } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { RegisteredUser } from '../models/RegisteredUser';
 import { User } from '../models/User';
 import { LoginService } from './login.service';
@@ -24,16 +24,32 @@ export class LoginComponent implements OnInit {
 
   submitForm() {
     console.log('hovering around');
+    this.user = {
+      userid: 0,
+      username: this.loginForm.controls['username'].value,
+      password: this.loginForm.controls['password'].value,
+      dateRegistered: new Date()
+    }
+    this.user.username=this.loginForm.controls['username'].value;
+    this.user.password=this.loginForm.controls['password'].value;
+    console.log(this.user);
     this.loginService.loginUser(this.user).subscribe(
       data => {this.regUser = data
         console.log(data);
         if(data.favoriteFood == 'Invalid Password') {
           this.invalidError='Invalid Username or Password'
+        } else {
+          this.invalidError='';
+          this.router.navigate(['/view']);
         }
       });
   }
 
-  constructor(private loginService: LoginService) { }
+  register() {
+    this.router.navigate(['/register']);
+  }
+
+  constructor(private loginService: LoginService, private router: Router) { }
 
   ngOnInit(): void {
     this.regUser = {

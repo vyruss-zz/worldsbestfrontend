@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { RegisteredUser } from '../models/RegisteredUser'
 import { User } from '../models/User';
 import { RegisterService } from './register.service';
@@ -11,7 +12,7 @@ import { RegisterService } from './register.service';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor(private registerService: RegisterService) { }
+  constructor(private registerService: RegisterService, private router: Router) { }
 
   newUser: User;
   newRegisteredUser: RegisteredUser;
@@ -26,13 +27,13 @@ export class RegisterComponent implements OnInit {
 
 
   form = new FormGroup({
-    username: new FormControl('', [Validators.required]),
-    password: new FormControl('', [Validators.required]),
-    favorite_food: new FormControl('', [Validators.required]),
-    pet: new FormControl('', [Validators.required]),
-    favorite_color: new FormControl('', [Validators.required]),
-    zodiac_sign: new FormControl('', [Validators.required]),
-    favorite_palindrome: new FormControl('', [Validators.required]),
+    username: new FormControl('uSeRnAmE', [Validators.required]),
+    password: new FormControl('PaSsWoRd', [Validators.required]),
+    favorite_food: new FormControl('_________', [Validators.required]),
+    pet: new FormControl('-------', [Validators.required]),
+    favorite_color: new FormControl('==========', [Validators.required]),
+    zodiac_sign: new FormControl('````````', [Validators.required]),
+    favorite_palindrome: new FormControl("'''''''", [Validators.required]),
   });
 
   submitRegisteredUser() {
@@ -69,7 +70,8 @@ export class RegisterComponent implements OnInit {
           console.log("New user failed to persist.");
         }
         this.registerService.createRegisteredUser(this.newRegisteredUser).subscribe(
-          (data) => {console.log("NEW REGISTERED USER: " + data);},
+          (data) => {console.log("NEW REGISTERED USER: " + data);
+          this.router.navigate(['/login'])},
           (error) => console.log(error)
         )
       },
@@ -78,9 +80,14 @@ export class RegisterComponent implements OnInit {
       }
     );
     
+    
 
     
   }//end submitRegisteredUser()
+
+  login() {
+    this.router.navigate(['/login']);
+  }
 
   ngOnInit(): void {
   }
