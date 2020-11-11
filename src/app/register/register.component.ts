@@ -69,7 +69,8 @@ export class RegisterComponent implements OnInit {
           console.log("New user failed to persist.");
         }
         this.registerService.createRegisteredUser(this.newRegisteredUser).subscribe(
-          (data => console.log(data))
+          (data) => {console.log("NEW REGISTERED USER: " + data);},
+          (error) => console.log(error)
         )
       },
       (error) => {
