@@ -123,5 +123,8 @@
       }
     }
   },
-  "defaultProject": "worldsbestfrontend"
+  "defaultProject": "worldsbestfrontend",
+  "cli": {
+    "analytics": false
+  }
 }
