@@ -74,7 +74,7 @@ export class RegisterComponent implements OnInit {
         )
       },
       (error) => {
-
+          console.log("CREATE USER ERROR: " + error);
       }
     );
     
