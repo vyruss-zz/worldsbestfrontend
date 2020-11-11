@@ -15,7 +15,7 @@
     <p [hidden]="isEditing">Favorite Palindrome:<span class="field">{{myPalindrome}}</span></p>
     <p [hidden]="!isEditing">Favorite Palindrome: <input [(ngModel)]="myPalindrome"></p>
 
-    <button type="submit">OK</button>
+    <button (click)="updateRegisteredUser()" type="submit">OK</button>
     <button (click)="changeEditMode()" type ="submit">Update</button>
 </div>
 

@@ -11,16 +11,16 @@ import { ViewService } from './view.service';
 export class ViewComponent implements OnInit {
 
   constructor(private service: ViewService) { 
-    service.users().subscribe(
-      data => { console.log(data); }
-    );
+    this.getRegisteredUser(1);
   }
 
-  myFood: String = 'Goldfish';
-  myPet: String = 'Ghost Pepper';
-  myColor: String ='Clear';
-  myZodiac: String = 'Noodles';
-  myPalindrome: String = 'aAa';
+  rUser: RegisteredUser;
+
+  myFood: string = 'Goldfish';
+  myPet: string = 'Ghost Pepper';
+  myColor: string ='Clear';
+  myZodiac: string = 'Noodles';
+  myPalindrome: string = 'aAa';
 
   isEditing: boolean = false;
 
@@ -28,7 +28,37 @@ export class ViewComponent implements OnInit {
     this.isEditing = !this.isEditing;
   }
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+
+  getRegisteredUser(index: number){
+    this.service.users().subscribe(
+      data => { 
+        console.log(data); 
+        
+        this.rUser = data[index].reg;
+
+        this.myFood = this.rUser.favoriteFood;
+        this.myPet = this.rUser.favoritePet;
+        this.myColor = this.rUser.favoriteColor;
+        this.myZodiac = this.rUser.zodiacSign;
+        this.myPalindrome = this.rUser.favoritePalindrome;
+
+        this.rUser.myUser = data[index];
+
+        data[index].reg = null;
+
+        console.log(this.rUser);
+      }
+    );
   }
 
+  updateRegisteredUser(){
+    this.rUser.favoriteFood = this.myFood;
+    this.rUser.favoritePet = this.myPet;
+    this.rUser.favoriteColor = this.myColor;
+    this.rUser.zodiacSign = this.myZodiac;
+    this.rUser.favoritePalindrome = this.myPalindrome;
+    
+    this.service.updateRegisteredUser(this.rUser).subscribe();
+  }
 }
