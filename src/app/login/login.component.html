@@ -1,9 +1,13 @@
 <div class="header">LOG IN</div>
 <div class="borders">
+<form [formGroup]='loginForm'>
     <div class="box">
-    <div>    <p>Username: <input type="text" name="regUserText" value="UsErNaMe"></p></div>
-    <div>    <p>Password: <input type="text" name="regUserText" value="pAsSwOrD"></p></div>
-    <button type="submit">OK</button>
-</div>
+        <div>    <p>Username: <input type="text" name="regUserText" value="UsErNaMe" formControlName='username'></p></div>
+        <div>    <p>Password: <input type="text" name="regUserText" value="pAsSwOrD" formControlName='password'></p></div>
+        <div><p class="error"> {{invalidError}}</p></div>
+        <button type="submit" (mouseover)='submitForm()'>OK</button>
+        <button type="submit" (mouseover)='register()'>Register</button>
+    </div>
+</form>
 </div>
 

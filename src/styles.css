@@ -40,6 +40,7 @@ input {
 input:focus {
     background-color: #FFFF55;
     border: none;
+    outline: none;
 }
 
 div > p {
@@ -66,7 +67,94 @@ button:focus {
     background-color: #555555;
     border: none;
     border-style: none;
+    outline: none;
 }
+.error {
+    background-color: #AA0000;
+    color: #FFFF55;
+    animation: errorText 0.5s infinite;
+}
+
+@keyframes errorText {
+    0% {color: #FFFF55} 
+        /* background-color: #123456} */
+        /* 2% {background-color: #654321}
+        4% {background-color: #654123}
+        6% {background-color: #615243}
+        8% {background-color: #321555}
+        10% {background-color: #FFFFFF}
+        12% {background-color: #000000}
+        14% {background-color: #123456}
+        16% {background-color: #654321}
+        18% {background-color: #321555}
+        20% {background-color: #123456}
+        22% {background-color: #654321}
+        24% {background-color: #654123}
+        26% {background-color: #615243}
+        28% {background-color: #321555}
+        30% {background-color: #FFFFFF}
+        32% {background-color: #000000}
+        34% {background-color: #123456}
+        36% {background-color: #654321}
+        38% {background-color: #321555}
+        40% {background-color: #123456}
+        42% {background-color: #000000}
+        44% {background-color: #123456}
+        46% {background-color: #654321}
+        48% {background-color: #321555} */
+    49% {color: #FFFF55 }
+        /* 2% {background-color: #654321}
+        4% {background-color: #654123}
+        6% {background-color: #615243}
+        8% {background-color: #321555}
+        10% {background-color: #FFFFFF}
+        12% {background-color: #000000}
+        14% {background-color: #123456}
+        16% {background-color: #654321}
+        18% {background-color: #321555}
+        20% {background-color: #123456}
+        22% {background-color: #654321}
+        24% {background-color: #654123}
+        26% {background-color: #615243}
+        28% {background-color: #321555}
+        30% {background-color: #FFFFFF}
+        32% {background-color: #000000}
+        34% {background-color: #123456}
+        36% {background-color: #654321}
+        38% {background-color: #321555}
+        40% {background-color: #123456}
+        42% {background-color: #000000}
+        44% {background-color: #123456}
+        46% {background-color: #654321}
+        48% {background-color: #321555} */
+    50% { color: #AA0000 }
+    /* 52% {background-color: #654321}
+    54% {background-color: #654123}
+    56% {background-color: #615243}
+    58% {background-color: #321555}
+    60% {background-color: #FFFFFF}
+    62% {background-color: #000000}
+    64% {background-color: #123456}
+    66% {background-color: #654321}
+    68% {background-color: #321555}
+    70% {background-color: #123456}
+    72% {background-color: #654321}
+    74% {background-color: #654123}
+    76% {background-color: #615243}
+    78% {background-color: #321555}
+    80% {background-color: #FFFFFF}
+    82% {background-color: #000000}
+    84% {background-color: #123456}
+    86% {background-color: #654321}
+    88% {background-color: #321555}
+    90% {background-color: #123456}
+    92% {background-color: #000000}
+    94% {background-color: #123456}
+    96% {background-color: #654321}
+    98% {background-color: #321555} */
+100% {color: #AA0000 }
+}
+
 .field {
     background-color: #0000AA;
     color: #55FFFF;
@@ -78,10 +166,12 @@ button:focus {
     float: right;
 }
 html, body { 
+    
     height: 100%; 
     margin: 0; font-family: monospace; 
 }
 body { 
+    margin-top: 128px;
     background-image: url("https://catcssp2imgbucket.s3.us-east-2.amazonaws.com/background.bmp");
     background-repeat: repeat;
 }

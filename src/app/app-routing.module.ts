@@ -8,7 +8,8 @@ import { ViewComponent } from './view/view.component';
 const routes: Routes = [
   {path: 'register', component: RegisterComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'view', component: ViewComponent}
+  {path: 'view', component: ViewComponent},
+  {path: '', component: LoginComponent}
 ]
 
 @NgModule({

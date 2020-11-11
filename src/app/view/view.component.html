@@ -1,11 +1,20 @@
 <div class="header">ABOUT ME</div>
 <div class="borders">
-<p>Favorite Food: <span class="field">{{myFood}}</span></p>
-<p>Favorite Pet:<span class="field">{{myPet}}</span></p>
-<p>Favorite Color:<span class="field">{{myColor}}</span></p>
-<p>Zodiac Sign:<span class="field">{{myZodiac}}</span></p>
-<p>Favorite Palindrome:<span class="field">{{myPalindrome}}</span></p>
-<button type="submit">OK</button>
-<button type ="submit">Update</button>
-</div>
+    <p [hidden]="isEditing">Favorite Food: <span class="field">{{myFood}}</span></p>
+    <p [hidden]="!isEditing">Favorite Food: <input [(ngModel)]="myFood"></p>
 
+    <p [hidden]="isEditing">Favorite Pet:<span class="field">{{myPet}}</span></p>
+    <p [hidden]="!isEditing">Favorite Pet: <input [(ngModel)]="myPet"></p>
+
+    <p [hidden]="isEditing">Favorite Color:<span class="field">{{myColor}}</span></p>
+    <p [hidden]="!isEditing">Favorite Color: <input [(ngModel)]="myColor"></p>
+
+    <p [hidden]="isEditing">Zodiac Sign:<span class="field">{{myZodiac}}</span></p>
+    <p [hidden]="!isEditing">Zodiac Sign: <input [(ngModel)]="myZodiac"></p>
+
+    <p [hidden]="isEditing">Favorite Palindrome:<span class="field">{{myPalindrome}}</span></p>
+    <p [hidden]="!isEditing">Favorite Palindrome: <input [(ngModel)]="myPalindrome"></p>
+
+    <button (click)="updateRegisteredUser()" type="submit">OK</button>
+    <button (click)="changeEditMode()" type ="submit">Update</button>
+</div>
