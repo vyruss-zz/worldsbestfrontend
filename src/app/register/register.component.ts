@@ -44,7 +44,8 @@ export class RegisterComponent implements OnInit {
       userid: 0,
       dateRegistered: new Date,
       username: this.form.controls["username"].value,
-      password: this.form.controls["password"].value
+      password: this.form.controls["password"].value,
+      myReg: null
     }
     console.log(JSON.stringify(this.newUser));
 
