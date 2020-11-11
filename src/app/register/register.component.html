@@ -1,13 +1,15 @@
 <div class="header">REGISTER</div>
 <div class="borders">
     <div class="box">
-        <div>    <p>Password: <input type="text" name="regUserText" value="pAsSwOrD"></p></div>
-        <div>    <p>Username: <input type="text" name="regUserText" value="UsErNaMe"></p></div>
-        <div>    <p>Favorite Food: <input type="text" name="regUserText" value="fav food"></p></div>
-        <div>    <p>Pet: <input type="text" name="regUserText" value="dog"></p></div>    
-        <div>    <p>Favorite color: <input type="text" name="regUserText" value="-1"></p></div>
-        <div>    <p>Zodiac Sign: <input type="text" name="regUserText" value="Chicken Broth"></p></div>
-        <div>    <p>Favorite Palindrome: <input type="text" name="regUserText" value="racecar"></p></div>
-    <button type="submit">OK</button>
+    <form [formGroup]="form">
+            <div>    <p>Password: <input type="text" name="regUserText" value="pAsSwOrD" formControlName = "password"></p></div>
+            <div>    <p>Username: <input type="text" name="regUserText" value="UsErNaMe" formControlName = "username"></p></div>
+            <div>    <p>Favorite Food: <input type="text" name="regUserText" value="fav food" formControlName = "favorite_food"></p></div>
+            <div>    <p>Pet: <input type="text" name="regUserText" value="dog" formControlName = "pet"></p></div>    
+            <div>    <p>Favorite color: <input type="text" name="regUserText" value="-1" formControlName = "favorite_color"></p></div>
+            <div>    <p>Zodiac Sign: <input type="text" name="regUserText" value="Chicken Broth" formControlName = "zodiac_sign"></p></div>
+            <div>    <p>Favorite Palindrome: <input type="text" name="regUserText" value="racecar" formControlName = "favorite_palindrome"></p></div>
+        <button type="submit" (click) = "submitRegisteredUser()">OK</button>
+    </form>
 </div>
 </div>
