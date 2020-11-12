@@ -21,7 +21,7 @@ export class TimeoutPopupComponent implements OnInit {
       this.bnIdle.stopTimer();
       this.dialogRef.close();
       
-      // this.router.navigate(['/'])
+      this.router.navigate(['/login'])
       // console.log('EXPIRED!');
       }
     }
