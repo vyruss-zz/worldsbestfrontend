@@ -10,6 +10,8 @@ import { ViewComponent } from './view/view.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BnNgIdleService } from 'bn-ng-idle';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -25,9 +27,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HttpClientModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    FormsModule
+    FormsModule,
+    MatDialogModule
   ],
-  providers: [],
+  providers: [BnNgIdleService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
