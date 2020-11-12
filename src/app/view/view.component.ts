@@ -33,8 +33,6 @@ export class ViewComponent implements OnInit {
   getRegisteredUser(index: number){
     this.service.users().subscribe(
       data => { 
-        console.log(data); 
-        
         this.rUser = data[index].reg;
 
         this.myFood = this.rUser.favoriteFood;
@@ -46,8 +44,6 @@ export class ViewComponent implements OnInit {
         this.rUser.myUser = data[index];
 
         data[index].reg = null;
-
-        console.log(this.rUser);
       }
     );
   }
